@@ -13,6 +13,7 @@ class App extends React.Component {
     });
   };
   render() {
+    let arr = ["basketball", "cricket", "laptop", "phone", "tiger"];
     return (
       <>
         <img
@@ -20,8 +21,10 @@ class App extends React.Component {
           height="200px"
           alt={this.state.img}
         />
-        {["basketball", "cricket", "laptop", "phone", "tiger"].map((elm) => (
-          <button onClick={() => this.handleChange(elm)}>{elm}</button>
+        {arr.map((elm) => (
+          <button className={this.state.img === elm ? 'active' : ""} onClick={() => this.handleChange(elm)}>
+            {elm}
+          </button>
         ))}
       </>
     );
