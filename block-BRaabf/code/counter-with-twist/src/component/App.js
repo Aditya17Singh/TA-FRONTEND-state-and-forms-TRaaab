@@ -17,16 +17,17 @@ class App extends React.Component {
   };
   max = (event) => {
     let m = Number(event.target.innerText);
-    this.state({
+    this.setState({
       max: m,
     });
+    console.log(this.state.max);
   };
   handleIncrement = () => {
     this.setState({
       counter:
-        this.state.step
-          ? this.state.step + this.state.counter
-          : this.state.counter + 1,
+        this.state.step + this.state.counter > this.state.max
+          ? this.state.counter
+          : this.state.counter + this.state.step,
     });
   };
   handleDecrement = () => {
@@ -50,7 +51,12 @@ class App extends React.Component {
         <h2>Steps</h2>
         <div>
           {steps.map((each) => (
-            <button onClick={(event) => this.select(event)}>{each}</button>
+            <button
+              className={this.state.step === each ? "active" : ""}
+              onClick={(event) => this.select(event)}
+            >
+              {each}
+            </button>
           ))}
         </div>
         <div>
