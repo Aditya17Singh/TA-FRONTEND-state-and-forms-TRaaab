@@ -163,4 +163,23 @@ body {
 }
 .align-center {
   text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.image-width {
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.flex-45 {
+  flex: 0 1 45%;
+}
+.title{
+  font-weight: 900;
+}
+.card{
+  margin-bottom: 1rem;
 }
