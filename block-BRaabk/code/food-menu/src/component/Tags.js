@@ -19,7 +19,7 @@ class Tags extends React.Component {
     if (!this.state.menu) {
       everyone = data.map((ev) => ev);
     } else {
-      everyone = data.filter((elm) => elm.category === this.state.menu)
+      everyone = data.filter((elm) => elm.category === this.state.menu);
     }
     let category = data.reduce((acc, cv, i, arr) => {
       acc.push(cv.category);
@@ -29,9 +29,11 @@ class Tags extends React.Component {
     return (
       <>
         <div className="align-center">
-          <button onClick={() => this.handleChange("")}>All</button>
+          <button className={this.state.menu === "" ? "active" : ""} onClick={() => this.handleChange("")}>All</button>
           {m.map((elm, i, arr) => (
-            <button onClick={() => this.handleChange(elm)}>{elm}</button>
+            <button className={this.state.menu === elm ? "active" : ""} onClick={() => this.handleChange(elm)}>
+              {elm}
+            </button>
           ))}
         </div>
         <Menu info={everyone} />
