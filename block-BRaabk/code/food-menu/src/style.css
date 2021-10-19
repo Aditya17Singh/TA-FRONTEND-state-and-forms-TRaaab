@@ -183,3 +183,14 @@ body {
 .card{
   margin-bottom: 1rem;
 }
+button{
+  background-color: black;
+  color: white;
+  border: 0;
+  margin-left: 0.7rem;
+  padding: 0.2rem 0.9rem;
+  border-radius: 3px;
+}
+.active{
+  background-color: rgb(160, 95, 98);
+}
