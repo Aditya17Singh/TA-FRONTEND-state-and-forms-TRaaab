@@ -1,0 +1,18 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.error {
+  border: 1px solid red;
+  outline: 0;
+  color: red;
+}
+span {
+  color: red;
+  font-size: 0.7rem;
+}
+input {
+  display: block;
+  border: 1px solid black;
+}
