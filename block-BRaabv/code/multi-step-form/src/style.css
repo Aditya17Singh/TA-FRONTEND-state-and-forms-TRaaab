@@ -1,0 +1,244 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.image {
+  width: 100%;
+  object-fit: cover;
+  color: tomato;
+  font-size: 0;
+  height: 490px;
+}
+body {
+  background-color: silver;
+}
+.sign-up {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.card {
+  background-color: white;
+  margin-top: 3rem;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-right: 2rem;
+}
+.flex-40 {
+  flex: 0 1 40%;
+}
+.flex-50 {
+  flex: 0 1 50%;
+}
+.object {
+  font-size: 0;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+input {
+  width: 100%;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid silver;
+  height: 2rem;
+  border-radius: 3px;
+  outline: 0;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+.flex-20 {
+  flex: 0 1 40%;
+}
+form {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.form-control {
+  margin-top: 2rem;
+}
+.form-control h2 {
+  font-size: 1.7rem;
+  font-weight: 900;
+  margin-top: 0.4rem;
+}
+.step {
+  color: gray;
+}
+.active {
+  background-color: blueviolet;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  color: white;
+  margin-right: 0.4rem;
+}
+.btn {
+  background-color: blue;
+  border: 0;
+  color: white;
+  border-radius: 3px;
+  padding: 0.6rem 0.6rem;
+  margin-top: 0.6rem;
+}
+.checkbox {
+  border-radius: 50px;
+  height: 0.8rem;
+  width: 10px;
+}
+.flex-35 {
+  flex: 0 1 35%;
+}
+.align {
+  align-items: center;
+}
+textarea {
+  display: block;
+  height: 100px;
+  width: 500px;
+  margin-top: 0.5rem;
+}
+.back {
+  margin-right: 0.3rem;
+  border: 0;
+  background-color: white;
+  font-weight: 600;
+}
+.justify{
+    justify-content: flex-start;
+}
