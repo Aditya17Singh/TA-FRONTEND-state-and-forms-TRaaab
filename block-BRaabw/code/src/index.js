@@ -1,7 +1,6 @@
 import React from "react";
-import { render } from "react-dom";
-export default function App() {
-  return <div>Hello World!</div>;
-}
+import ReactDom from "react-dom";
+import App from "./component/App";
+import "../src/style.css";
 
-render(<App />, document.getElementById("root"));
+ReactDom.render(<App />, document.getElementById("root"));
