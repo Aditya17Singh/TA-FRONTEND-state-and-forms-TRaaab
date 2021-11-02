@@ -8,27 +8,26 @@ class Size extends React.Component {
     this.state = {
       size:"",
       arr: [],
-      show: null,
       index: ""
     };
   }
   handleChange = (elm,index) => {
     this.setState({
       show: index,
-      index: index,
+      index: index + 1,
       arr: [data.products.filter((f) => f.availableSizes.includes(elm))],
       size:elm
     });
   };
   render() {
-    let size = data.products.reduce((acc, cv, i) => {
+    let size = data.products.reduce((acc, cv) => {
       return (acc = acc.concat(cv.availableSizes));
     }, []);
     //  let unique = [...new Set(size)];
     //  console.log(unique)
     let btn = size.filter((f, i, a) => a.indexOf(f) === i);
     let products =
-      this.state.show === this.state.index 
+       this.state.index 
         ?  this.state.arr.flat()
         : data.products.map((e) => e)
     return (

@@ -26,7 +26,7 @@ class Cart extends React.Component {
               <div className="cart-logo relative">
                 <i className="fas fa-cart-arrow-down"></i>
                 <span>Cart</span>
-                <div className="cart-count">0</div>
+                <div  className="cart-count">{this.props.totalQuantity}</div>
               </div>
               {this.props.cart.map((elm) => (
                 <div className="flex border-c item-center" key={elm.id}>
@@ -39,17 +39,37 @@ class Cart extends React.Component {
                   </div>
                   <div className="flex-50 style">
                     {elm.title}
-                    <div className="style-t">{elm.style}</div>
+                    <div className="style-t"></div>
+                    <div className="style-t">
+                      {" "}
+                      {elm.availableSizes[0]} | Sizes <br />
+                      {elm.style}
+                    </div>
                     <div className="style-t">Quantity: {elm.quantity}</div>
+                    <div>
+                      <button
+                        onClick={() => this.props.handleincrement(elm.id)}
+                      >
+                        +
+                      </button>
+                      <button
+                        onClick={() => this.props.handledecrement(elm.id)}
+                      >
+                        -
+                      </button>
+                    </div>
                   </div>
                   <div className="flex-20 price-c">{elm.price}</div>
-                  <div onClick={this.handleDelete} className="cross">
+                  <div
+                    onClick={() => this.props.handleDelete(elm.id)}
+                    className="cross"
+                  >
                     <i class="fas fa-times"></i>
                   </div>
                 </div>
               ))}
               <div className="z-index">
-                <div className="total">Sub Total - 0</div>
+                <div onClick={() => this.props} className="total">Sub Total - 0</div>
                 <div className="btn-div">
                   <button className="btn-checkout">Checkout</button>
                 </div>
