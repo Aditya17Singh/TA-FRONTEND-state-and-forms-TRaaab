@@ -5,12 +5,54 @@ class Products extends React.Component {
     super(props);
     this.state = {
       pro: [],
-      sortedArr: [],
     };
   }
-  handleSlide = (p, index) => {
-    this.setState({
-      pro: [...this.state.pro, p],
+  handleCartLength = () => {
+    let totalQuantity = this.state.pro.reduce((acc, cv) => {
+      console.log(acc);
+      acc = acc + cv.quantity;
+      console.log(acc);
+      return acc;
+    }, 0);
+  };
+  handleincrement = (id) => {
+    this.setState((prevState) => {
+      let products = prevState.pro.map((elm) => {
+        if (elm.id === id) {
+          elm.quantity = elm.quantity + 1;
+          return elm;
+        } else {
+          return elm;
+        }
+      });
+      return {
+        pro: products,
+      };
+    });
+  };
+  handledecrement = (id) => {
+    this.setState((prevState) => {
+      let products = prevState.pro.map((elm) => {
+        if (elm.id === id) {
+          elm.quantity = elm.quantity - 1;
+          return elm;
+        } else {
+          return elm;
+        }
+      });
+      return {
+        pro: products,
+      };
+    });
+  };
+  handleAddtocart = (p) => {
+    let id = p.id;
+    if (this.state.pro.some((elm) => elm.id === id)) {
+      return this.handleincrement(id);
+    }
+    p.quantity = 1;
+    this.setState((prevState) => {
+      return { pro: [...prevState.pro, p] };
     });
   };
   handleNew = (event) => {
@@ -20,10 +62,21 @@ class Products extends React.Component {
           ? this.props.info.sort((a, b) => b.price - a.price)
           : event.target.value === "high-to-low"
           ? this.props.info.sort((a, b) => a.price - b.price)
-          : event.target.value === "All"
-          ? this.props.info
           : "",
       ],
+    });
+  };
+  handleDelete = (id) => {
+    this.setState((prevState) => {
+      return {
+        pro: prevState.pro.filter((elm) => {
+          if (elm.id === id) {
+            return false;
+          } else {
+            return true;
+          }
+        }),
+      };
     });
   };
   render() {
@@ -63,7 +116,7 @@ class Products extends React.Component {
               </p>
               <div className="btn-center">
                 <button
-                  onClick={() => this.handleSlide(p, index)}
+                  onClick={() => this.handleAddtocart(p, index)}
                   className="btn-primary"
                 >
                   Add to Cart
@@ -73,7 +126,13 @@ class Products extends React.Component {
           ))}
         </div>
         <div>
-          <Cart cart={this.state.pro} />
+          <Cart
+            cart={this.state.pro}
+            handleincrement={this.handleincrement}
+            handledecrement={this.handledecrement}
+            handleDelete={this.handleDelete}
+            handleCartLength={this.handleCartLength}
+          />
         </div>
       </>
     );
