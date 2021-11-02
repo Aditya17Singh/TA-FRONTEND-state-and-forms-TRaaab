@@ -7,14 +7,50 @@ class Products extends React.Component {
       pro: [],
     };
   }
-  handleCartLength = () => {
-    let totalQuantity = this.state.pro.reduce((acc, cv) => {
-      console.log(acc);
-      acc = acc + cv.quantity;
-      console.log(acc);
-      return acc;
-    }, 0);
+  // componentDidUpdate() {
+  //   this.handleLocalStorage();
+  // }
+  // handleCartLength = () => {
+  //   let totalQuantity = this.state.pro.reduce((acc, cv) => {
+  //     console.log(acc);
+  //     acc = acc + cv.quantity;
+  //     console.log(acc);
+  //     return acc;
+  //   }, 0);
+  // };
+
+  componentDidMount() {
+    if (localStorage.carts) {
+      this.setState({ pro: JSON.parse(localStorage.carts) || [] });
+    }
+    window.addEventListener("beforeunload", this.handleLocalStorage);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("beforeunload", this.handleLocalStorage);
+  }
+  handleLocalStorage = () => {
+    localStorage.setItem("carts", JSON.stringify(this.state.pro));
   };
+
+  handleAddtocart = (p) => {
+    let id = p.id;
+    if (this.state.pro.some((elm) => elm.id === id)) {
+      return this.handleincrement(id);
+    }
+    p.quantity = 1;
+    this.setState((prevState) => {
+      return { pro: [...prevState.pro, p] };
+    });
+  };
+  handleCheckout = () => {
+    alert(
+      this.state.pro.reduce((acc, cv) => {
+        acc = Math.floor((cv.price * cv.quantity) + acc);
+        return acc;
+      }, 0)
+    );
+  };
+
   handleincrement = (id) => {
     this.setState((prevState) => {
       let products = prevState.pro.map((elm) => {
@@ -45,16 +81,7 @@ class Products extends React.Component {
       };
     });
   };
-  handleAddtocart = (p) => {
-    let id = p.id;
-    if (this.state.pro.some((elm) => elm.id === id)) {
-      return this.handleincrement(id);
-    }
-    p.quantity = 1;
-    this.setState((prevState) => {
-      return { pro: [...prevState.pro, p] };
-    });
-  };
+
   handleNew = (event) => {
     this.setState({
       sortedArr: [
@@ -131,7 +158,7 @@ class Products extends React.Component {
             handleincrement={this.handleincrement}
             handledecrement={this.handledecrement}
             handleDelete={this.handleDelete}
-            handleCartLength={this.handleCartLength}
+            handleCheckout={this.handleCheckout}
           />
         </div>
       </>

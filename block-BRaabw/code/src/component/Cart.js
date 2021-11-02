@@ -26,7 +26,7 @@ class Cart extends React.Component {
               <div className="cart-logo relative">
                 <i className="fas fa-cart-arrow-down"></i>
                 <span>Cart</span>
-                <div  className="cart-count">{this.props.totalQuantity}</div>
+                <div className="cart-count">{this.props.totalQuantity}</div>
               </div>
               {this.props.cart.map((elm) => (
                 <div className="flex border-c item-center" key={elm.id}>
@@ -69,9 +69,16 @@ class Cart extends React.Component {
                 </div>
               ))}
               <div className="z-index">
-                <div onClick={() => this.props} className="total">Sub Total - 0</div>
+                <div onClick={() => this.props} className="total">
+                  Sub Total - 0
+                </div>
                 <div className="btn-div">
-                  <button className="btn-checkout">Checkout</button>
+                  <button
+                    onClick={() => this.props.handleCheckout()}
+                    className="btn-checkout"
+                  >
+                    Checkout
+                  </button>
                 </div>
               </div>
             </div>
