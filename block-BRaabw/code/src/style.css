@@ -1,0 +1,369 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.width {
+  width: 100%;
+}
+.btn {
+  border-radius: 50%;
+  border: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+h1 {
+  font-weight: 800;
+}
+.card:hover {
+  border: 0.2px solid rgb(236, 234, 234);
+}
+.card:hover .btn-primary {
+  background-color: #eabf00;
+}
+.card {
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  border-radius: 1px;
+  /* z-index: -1; */
+}
+.flex-20 {
+  flex: 0 1 20%;
+}
+.flex-70 {
+  flex: 0 1 75%;
+}
+.flex-30 {
+  flex: 0 1 24%;
+}
+.flex-50 {
+  flex: 0 1 42%;
+}
+p {
+  text-align: center;
+}
+.btn-primary {
+  background-color: black;
+  color: white;
+  border: 0;
+  padding: 0.8rem 3rem;
+}
+.btn-center {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.pr {
+  margin-top: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+.price {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+.title {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+.free {
+  background-color: black;
+  color: white;
+  border: 0;
+  font-size: 0.5rem;
+  position: absolute;
+  top: 10px;
+  bottom: 280px;
+  left: 150px;
+  right: 0px;
+  padding: 0.3rem 0.3rem;
+  border-radius: 3px;
+}
+.relative {
+  position: relative;
+}
+.cart {
+  position: absolute;
+  width: 400px;
+  right: 0px;
+  background-color: black;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  overflow: scroll;
+}
+.cart::-webkit-scrollbar {
+  width: 0;
+}
+.style {
+  color: white;
+}
+.style-t {
+  color: gray;
+}
+.price-c {
+  color: white;
+}
+.border-c {
+  border: 1px solid rgb(70, 69, 69);
+  padding: 1rem 0rem;
+}
+.item-center {
+  align-items: center;
+  margin: 0.5rem 0.5rem;
+  align-items: flex-start;
+}
+.cart-logo {
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.cart-logo span {
+  font-size: 0.9rem;
+  margin-left: 0.6rem;
+}
+.cross {
+  color: rgb(44, 43, 43);
+  margin-right: 1.2rem;
+  cursor: pointer;
+}
+.cross:hover {
+  color: silver;
+}
+.cross:hover .style {
+  text-decoration: line-through;
+}
+.cart-count {
+  height: 25px;
+  width: 25px;
+  background-color: #ba9907;
+  border-radius: 50%;
+  position: absolute;
+  left: 190px;
+  color: black;
+  font-size: 0.9rem;
+  line-height: 30px;
+  bottom: -13px;
+}
+.conditional-cart {
+  color: white;
+  font-size: 2rem;
+  left: 51rem;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0px;
+  bottom: 0;
+  background-color: black;
+  position: fixed;
+  right: 0;
+  padding: 0.8rem 0.6rem;
+}
+.conditional-cross {
+  color: white;
+  font-size: 2rem;
+  left: 75rem;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0px;
+  bottom: 0;
+  background-color: black;
+  position: fixed;
+  right: 0;
+  padding: 0.6rem 0.6rem;
+  cursor: pointer;
+}
+.p-length {
+  font-weight: 700;
+  margin-left: 0.4rem;
+}
+.select {
+  position: absolute;
+  top: -20px;
+  left: 2rem;
+}
+.flex-10 {
+  margin-left: 43rem;
+}
+.active {
+  background-color: black;
+  border-radius: 50%;
+  border: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: white;
+}
+.justify {
+  justify-content: flex-start;
+}
+.btn-checkout {
+  text-align: center;
+  color: white;
+  background-color: brown;
+  border: 0;
+  cursor: pointer;
+}
+.btn-div {
+  text-align: center;
+  position: fixed;
+  bottom: 3rem;
+  right: 5rem;
+  padding: 1rem 5rem;
+  background-color: brown;
+}
+.total {
+  color: #ba9907;
+  position: fixed;
+  bottom: 7.4rem;
+  right: 13.5rem;
+}
+.z-index {
+  z-index: 2;
+  background-color: black;
+}
